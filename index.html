@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/css/main.css" rel="stylesheet">
+    <title>Home sensor system</title>
+</head>
+
+<body>
+    <div id="shader"></div>
+    <div class="wrapper">
+        <h1 class="title">Sensor display</h1>
+        <div class="graphContainer">
+            <div class="graphEl" id="soundGraphWrapper">
+                <div class="flexContainer">
+                    <p id="soundGraphSettingsNotification">Settings saved</p>
+                    <div id="soundGraph" class="graph"></div>
+                    <div class="graphDescription">
+                        <span id="soundGraphMutationsButton" class="mutationsButton">&#9735;</span>
+                        <p>Global minimum: <span title="globalMinimum"></span></p>
+                        <p>Visible minimum: <span title="visibleMinimum"></span></p>
+                        <p>Global maximum: <span title="globalMaximum"></span></p>
+                        <p>Visible maximum: <span title="visibleMaximum"></span></p>
+                        <p>Global average: <span title="globalAverage"></span></p>
+                        <p>Visible average: <span title="visibleAverage"></span></p>
+                        <button id="clearGlobalSoundData">Clear global data</button>
+                        <table id="soundGraphMutationsList" class="mutationsList">
+                            <tr>
+                                <th>Date:</th>
+                                <th>Value:</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="graphSettings" id="soundGraphSettings">
+                    <label for="soundGraph_frequency">Query frequency</label>
+                    <div><span>&lt;</span><input id="soundGraph_frequency" type="range" step="500" min="1000" max="10000" value="1000"><span>&gt;</span></div>
+                    <output for="soundGraph_frequency" id="soundGraph_frequencyOutput">5000</output>
+                    <label for="soundGraph_dotNumber">Dots on graph</label>
+                    <div><span>&lt;</span><input id="soundGraph_dotNumber" type="range" step="1" min="5" max="25" value="10"><span>&gt;</span></div>
+                    <output for="soundGraph_dotNumber" id="soundGraph_dotNumberOutput">10</output>
+                    <label for="soundGraph_placeholder">Placeholder</label>
+                    <div><span>&lt;</span><input id="soundGraph_placeholder" type="range" step="500" min="1000" max="10000" value="1000"><span>&gt;</span></div>
+                    <output for="soundGraph_placeholder" id="soundGraph_placeholderOutput">1000</output>
+                    <button>Reset to default;</button>
+                </div>
+
+                <div class="expandGraph" id="expandSoundGraph">
+                    <div class="arrowDown"></div>
+                </div>
+            </div>
+
+            <div class="graphEl" id="lightGraphWrapper">
+                <div class="flexContainer">
+                    <p id="lightGraphSettingsNotification">Settings saved</p>
+                    <div id="lightGraph" class="graph"></div>
+                    <div class="graphDescription">
+                        <span id="lightGraphMutationsButton" class="mutationsButton">&#9735;</span>
+                        <p>Global minimum: <span title="globalMinimum"></span></p>
+                        <p>Visible minimum: <span title="visibleMinimum"></span></p>
+                        <p>Global maximum: <span title="globalMaximum"></span></p>
+                        <p>Visible maximum: <span title="visibleMaximum"></span></p>
+                        <p>Global average: <span title="globalAverage"></span></p>
+                        <p>Visible average: <span title="visibleAverage"></span></p>
+                        <button id="clearGlobalLightData">Clear global data</button>
+                        <table id="lightGraphMutationsList" class="mutationsList">
+                            <tr>
+                                <th>Date:</th>
+                                <th>Value:</th>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="graphSettings" id="lightGraphSettings">
+                    <label for="lightGraph_frequency">Query frequency</label>
+                    <div><span>&lt;</span><input id="lightGraph_frequency" type="range" step="500" min="1000" max="10000" value="1000"><span>&gt;</span></div>
+                    <output for="lightGraph_frequency" id="lightGraph_frequencyOutput">5000</output>
+                    <label for="lightGraph_dotNumber">Dots on graph</label>
+                    <div><span>&lt;</span><input id="lightGraph_dotNumber" type="range" step="1" min="5" max="25" value="10"><span>&gt;</span></div>
+                    <output for="lightGraph_dotNumber" id="lightGraph_dotNumberOutput">10</output>
+                    <label for="lightGraph_placeholder">Placeholder</label>
+                    <div><span>&lt;</span><input id="lightGraph_placeholder" type="range" step="500" min="1000" max="10000" value="1000"><span>&gt;</span></div>
+                    <output for="lightGraph_placeholder" id="lightGraph_placeholderOutput">1000</output>
+                    <button>Reset to default</button>
+                </div>
+
+                <div class="expandGraph" id="expandLightGraph">
+                    <div class="arrowDown"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/js/dataGenerator.js"></script>
+    <script src="/js/characteristicValues.js"></script>
+    <script src="/js/mutationsHandler.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+
+
+</html>
